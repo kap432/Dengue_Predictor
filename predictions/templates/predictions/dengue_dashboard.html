@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dengue Symptoms Awareness</title>
+    <link rel="stylesheet" href="{% static 'styles/dengue_dashboard.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height : 400px;
+            width : 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DENGUE Predictor</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Statistics</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="{% url 'dengue_dashboard' %}">Get Prediction</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="map-section"></section>
+        <h2>Location Map</h2>
+        <label for="location">Select Location:</label>
+        <select id="location" name="location">
+            <option value="">Select a location</option>
+            <option value="mulund">Mulund</option>
+        </select>
+
+        <!-- Map Container -->
+        <div id="map"></div>
+    </section>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize map
+        var map = L.map('map').setView([20.5937, 78.9629], 5); // Default location to India
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Location coordinates
+        var locations = {
+            'mulund': [19.1896, 72.9681] // Coordinates for Mulund, Mumbai
+        };
+
+        // Function to update map location
+        function updateMap(location) {
+            map.setView(locations[location] || [19.1721, 72.9563], 10); // Default to India if no location is selected
+            if (location) {
+                L.circle(locations[location], {
+                    color: 'red',
+                    fillColor: '#f03',
+                    fillOpacity: 0.5,
+                    radius: 500
+                }).addTo(map);
+            }
+        }
+
+        // Handle dropdown change
+        document.getElementById('location').addEventListener('change', function() {
+            var selectedLocation = this.value;
+            updateMap(selectedLocation);
+        });
+
+        // Initialize with no location
+        updateMap('');
+    </script>
+
+    <footer>
+        <h3>Contact</h3>
+        <p>Email: <a href="mailto:notsorealtestingprediction@gmail.com">notsorealtestingprediction@gmail.com</a></p>
+        <p>Phone: +91 00000 00000</p>
+        <p>Location: West, Chembur</p>
+        <div class="social-links">
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+        </div>
+    </footer>
+</body>
+</html>

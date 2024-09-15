@@ -57,4 +57,6 @@ def predict_dengue(request):
     # Render the form if not POST request
     return render(request, 'predictions/index.html')
 
-
+def dengue_dashboard(request):
+    # Render the dengue dashboard page
+    return render(request, 'predictions/dengue_dashboard.html')
