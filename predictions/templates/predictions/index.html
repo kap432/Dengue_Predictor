@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dengue Predictor</title>
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>DENGUE Predictor</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Statistics</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#prediction-form" class="get-prediction">Get Prediction</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Dengue Predictor</h2>
+            <p>Powered by Machine Learning Algorithm</p>
+            <button>Get Prediction</button>
+        </div>
+        <img src="{% static 'images/mosquito.jpg' %}" alt="Mosquito" class="hero-image">
+    </section>
+    <section class="info-cards">
+        <div class="card special-card">
+            <div class="card-content">
+                <h3>Why try Dengue Predictor?</h3>
+                <p>Each diagnosis is crucial to prevent the development of a disease that may cause damage to human lives. This web application can be used to predict the presence of Dengue using the Dengue Symptoms if there is no available Dengue testing kits.</p>
+            </div>
+            <div class="card-buttons">
+                <a href="#">Learn More</a>
+            </div>
+        </div>        
+        <div class="card">
+            <div class="card-content">
+                <h3>Dengue Symptoms</h3>
+                <p>Dengue affects different aspects of the body with common symptoms like high fever, joint pain, vomiting, and rashes. Without proper medical intervention, hospitalization may be required.</p>
+            </div>
+            <div class="card-buttons">
+                <a href="{% url 'dengue_symptoms' %}">Read More</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <h3>Advice for the Public</h3>
+                <p>Minimize dengue risks through mosquito control and preventive measures. Use insect repellent, cover stagnant water, and encourage the community to follow precautions.</p>
+            </div>
+            <div class="card-buttons">
+                <a href="#">Read More</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <h3>Dengue Dashboard</h3>
+                <p>More insights into Dengue predictions, cases by area, and other statistical data are provided for healthcare professionals and decision-makers.</p>
+            </div>
+            <div class="card-buttons">
+                <a href="#">Read More</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about">
+        <div class="about-content">
+            <img src="{% static 'images/about-image.jpg' %}" alt="About Image" class="about-image">
+            <div class="about-text">
+                <h2>Get to know About Us</h2>
+                <p>
+                    The Dengue Predictor application leverages advanced machine learning algorithms to forecast the likelihood of dengue outbreaks. By analyzing various factors such as weather patterns and historical data, the tool aims to provide timely predictions to help in early intervention and preventive measures.
+                </p>
+            </div>
+        </div>
+    </section>    
+    <section class="prediction-form">
+        <h2>Prediction</h2>
+        <form method="POST" action="{% url 'predict_dengue' %}">
+            {% csrf_token %}
+            <label for="heart_rate">Heart Rate (bpm):</label>
+            <input type="text" id="heart_rate" name="heart_rate" placeholder="Enter heart rate">
+    
+            <label for="blood_pressure1">Blood Pressure_systolic (mmHg):</label>
+            <input type="text" id="blood_pressure1" name="blood_pressure" placeholder="Enter blood pressure">
+
+            <label for="blood_pressure2">Blood Pressure_diastolic (mmHg):</label>
+            <input type="text" id="blood_pressure2" name="blood_pressure" placeholder="Enter blood pressure">
+    
+            <label for="haemoglobin">Haemoglobin (g/dL):</label>
+            <input type="text" id="haemoglobin" name="haemoglobin" placeholder="Enter haemoglobin">
+    
+            <label for="platelet_count">Platelet Count (x10^9/L):</label>
+            <input type="text" id="platelet_count" name="platelet_count" placeholder="Enter platelet count">
+    
+            <label for="wbc_count">White Blood Cell Count (x10^9/L):</label>
+            <input type="text" id="wbc_count" name="wbc_count" placeholder="Enter WBC count">
+    
+            <label for="urea">Urea (mg/dL):</label>
+            <input type="text" id="urea" name="urea" placeholder="Enter urea level">
+    
+            <label for="sodium">Sodium (mmol/L):</label>
+            <input type="text" id="sodium" name="sodium" placeholder="Enter sodium level">
+    
+            <label for="potassium">Potassium (mmol/L):</label>
+            <input type="text" id="potassium" name="potassium" placeholder="Enter potassium level">
+    
+            <div class="button-container">
+                <button type="submit">Predict</button>
+            </div>
+        </form>
+    
+        <!-- Display prediction result -->
+        {% if prediction %}
+            <div class="prediction-result">
+                <h3>Prediction Result: {{ prediction }}</h3>
+            </div>
+        {% endif %}
+    </section>
+
+    <footer>
+        <h3>Contact</h3>
+        <p>Email: <a href="mailto:notsorealtestingprediction@gmail.com">notsorealtestingprediction@gmail.com</a></p>
+        <p>Phone: +91 00000 00000</p>
+        <p>Location: West, Chembur</p>
+        <div class="social-links">
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+        </div>
+    </footer>
+</body>
+</html>

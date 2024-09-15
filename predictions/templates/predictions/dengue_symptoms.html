@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dengue Symptoms Awareness</title>
+    <link rel="stylesheet" href="{% static 'styles/dengue_symptoms.css' %}">
+</head>
+<body>
+    <header>
+        <h1>DENGUE Predictor</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Prediction</a></li>
+                <li><a href="#">Statistics</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#" class="get-prediction">Get Prediction</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Understanding Dengue Symptoms</h2>
+        <p>Learn about the symptoms of Dengue and what to look out for.</p>
+    </section>
+
+    <section class="symptoms-container">
+        <div class="symptoms-box">
+            <h2>Symptoms of Dengue</h2>
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230105131058/Symptoms-of-Dengue-Fever.png" alt="Dengue Symptoms">
+            <p>Normally, people infected with the dengue virus are either asymptomatic or experience mild symptoms that are often mistaken for the flu. Dengue symptoms typically appear 8–10 days after being bitten by infected mosquitoes. The following are warning signs of dengue:</p>
+            <ul>
+                <li>High fever (104°F)</li>
+                <li>Headache</li>
+                <li>Muscle or joint pain</li>
+                <li>Vomiting</li>
+                <li>Nausea</li>
+                <li>Rashes</li>
+                <li>Swollen glands</li>
+                <li>Pain behind the eyes</li>
+            </ul>
+            <p>Most people recover within a week or two. However, in some cases, dengue can become life-threatening. This stage is known as severe dengue (Dengue Hemorrhagic Fever or Dengue Shock Syndrome).</p>
+        </div>
+
+        <div class="symptoms-box">
+            <h2>Symptoms of Severe Dengue</h2>
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230105130406/Warning-Signs-of-Severe-Dengue-Fever.jpg" alt="Severe Dengue Symptoms">
+            <p>Severe dengue occurs when the blood vessels are damaged and the platelet count drops, leading to internal bleeding, organ failure, and, in some cases, death. Severe dengue symptoms usually appear 24-48 hours after the fever. Warning signs include:</p>
+            <ul>
+                <li>Severe stomach ache</li>
+                <li>Continuous vomiting</li>
+                <li>Bleeding from gums and nose</li>
+                <li>Internal bleeding under the skin</li>
+                <li>Heavy breathing</li>
+                <li>Restlessness</li>
+                <li>Blood in urine, stool, or vomit</li>
+                <li>Continuous abdominal pain</li>
+            </ul>
+            <p>If you experience any of these symptoms, seek medical attention immediately. Early diagnosis and treatment are crucial to managing the disease and preventing complications.</p>
+        </div>
+    </section>
+
+    <footer>
+        <h3>Contact</h3>
+        <p>Email: <a href="mailto:notsorealtestingprediction@gmail.com">notsorealtestingprediction@gmail.com</a></p>
+        <p>Phone: +91 00000 00000</p>
+        <p>Location: West, Chembur</p>
+        <div class="social-links">
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+        </div>
+    </footer>
+</body>
+</html>

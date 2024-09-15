@@ -1,0 +1,287 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: white;
+    color: #007bff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.get-prediction {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 50%;
+    padding-right: 20px; /* Space between text and image */
+}
+
+.hero-text h2 {
+    font-size: 3em; /* Larger heading */
+    margin: 0 0 10px 0; /* Adjusted margins */
+}
+
+.hero-text p {
+    font-size: 1.5em; /* Larger paragraph text */
+    margin: 0 0 20px 0; /* Adjusted margins */
+}
+
+.hero-text button {
+    font-size: 1.2em; /* Larger button text */
+    padding: 10px 20px; /* Larger button padding */
+    background-color: #007bff; /* Primary button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.hero-text button:hover {
+    background-color: #0056b3; /* Darker button color on hover */
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 50%; /* Ensure image takes up full available width */
+    height: auto;
+}
+
+/* Container for info cards */
+.info-cards {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to the next line if needed */
+    justify-content: space-around; /* Centers cards and adjusts spacing */
+    padding: 20px;
+    background-color: #f4f4f4; /* Light background for contrast */
+}
+
+/* Card styling */
+.card {
+    flex: 1 1 22%; /* Flex grow, shrink, and basis to fit 4 cards in a row */
+    max-width: 22%; /* Ensure cards do not exceed 22% of the container width */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin: 10px; /* Space between cards */
+    overflow: hidden; /* Hide overflow to keep rounded corners */
+    transition: box-shadow 0.3s, transform 0.3s; /* Smooth transitions */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space out content and buttons */
+}
+
+/* Card content */
+.card-content {
+    padding: 20px; /* Padding inside the card */
+    flex: 1; /* Allow content to take up available space */
+}
+
+/* Card buttons container */
+.card-buttons {
+    display: flex;
+    justify-content: center; /* Center-align buttons */
+    gap: 4px; /* Space between buttons */
+    padding: 10px; /* Padding inside buttons container */
+}
+
+/* Individual card buttons */
+.card-buttons a {
+    display: inline-block;
+    padding: 10px 20px; /* Increased padding for better fit */
+    color: #007bff;
+    background-color: #fff;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em; /* Adjust font size */
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.card-buttons a:hover {
+    background-color: #007bff;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.card-buttons a:active {
+    transform: scale(1);
+}
+
+/* Special card styling */
+.special-card {
+    background-color: #007bff; /* Blue background for special card */
+    color: #fff; /* White text */
+}
+
+.special-card .card-buttons a {
+    color: #007bff; /* White text color for links in special card */
+    border-color: #fff; /* White border */
+}
+
+.special-card .card-buttons a:hover {
+    background-color: #fff; /* White background on hover */
+    color: #007bff; /* Blue text color on hover */
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+}
+
+.social-links a {
+    margin: 0 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.about {
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for the section */
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-image {
+    flex: 1;
+    max-width: 45%; /* Adjust the width as needed */
+    height: auto;
+    margin-right: 20px; /* Space between image and text */
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    color: #007bff; /* Blue color for the heading */
+    font-size: 2.5em; /* Larger font size for emphasis */
+    margin-top: 0;
+    margin-bottom: 15px; /* Space below the heading */
+}
+
+.about-text p {
+    font-size: 1.2em; /* Adjust font size for paragraph */
+    line-height: 1.5; /* Improve readability */
+}
+
+.prediction-form {
+    background-color: #f0f8ff; /* Light background color */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for a lifted effect */
+    width: 80%; /* Broader form width */
+    max-width: 900px; /* Adjust maximum width for larger screens */
+    margin: 30px auto; /* Center the form with margin */
+    position: relative; /* Position relative to use absolute positioning inside */
+}
+
+.prediction-form h2 {
+    color: #007bff; /* Blue color for the section heading */
+    font-size: 2.4em; /* Larger font size for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+    text-align: center; /* Center align heading */
+}
+
+.prediction-form form {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to next line if space is insufficient */
+    gap: 20px; /* Space between input fields */
+    align-items: center; /* Align items vertically centered */
+}
+
+.prediction-form label {
+    flex: 1 1 100%; /* Make label span the full width */
+    font-size: 1.2em; /* Increase label font size */
+    margin-bottom: 10px; /* Space below label */
+    color: #333; /* Darker text color for better readability */
+}
+
+.prediction-form input[type="text"] {
+    flex: 1 1 calc(50% - 20px); /* Adjust to fit two fields per line */
+    font-size: 1em; /* Font size for inputs */
+    padding: 12px;
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+.prediction-form input[type="text"]:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default focus outline */
+}
+
+.prediction-form .button-container {
+    display: flex;
+    justify-content: flex-end; /* Align button to the right */
+    margin-top: 20px; /* Space above the button container */
+}
+
+.prediction-form button {
+    font-size: 1.1em; /* Slightly larger font size for the button */
+    padding: 12px 20px; /* Button padding */
+    background-color: #007bff; /* Blue background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for color and scaling */
+    margin-left: 800px;
+}
+
+.prediction-form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly scale up the button */
+}
+
+.prediction-form button:active {
+    transform: scale(1); /* Return to original size on click */
+}
+
+
