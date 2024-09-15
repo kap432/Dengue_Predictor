@@ -1,0 +1,183 @@
+
+        /* General Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: white;
+            color: #007bff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .get-prediction {
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px;
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .hero h2 {
+            margin: 0;
+            font-size: 2em;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            color: white;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1, h2, p, ul, li, strong {
+            color: #007bff; /* Blue color for all text */
+        }
+
+        .tips {
+            /* display: flex; */
+            /* justify-content: space-between; */
+            /* gap: 20px; Adds space between each tip */
+            /* margin-top: 20px; */
+            /* flex-wrap: wrap; */
+        }
+
+        .tip {
+            text-align: center;
+            width: 180%;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .tip img {
+            width: 100%;
+            height: auto;
+            border-radius: 10%;
+            object-fit: cover;
+        }
+
+        .tip p {
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        .prevention-section {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .prevention-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .prevention-section ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Styling for the new sections */
+        .section {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .section h2 {
+            font-size: 1.5rem;
+        }
+
+        .section p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .section ul li {
+            margin-bottom: 10px;
+        }
+
+        .section strong {
+            font-size: 1.2rem;
+        }
+
+        /* Disclaimer styling */
+        .disclaimer {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #ccc;
+            font-size: 0.9rem;
+            text-align: left;
+            border-radius: 8px;
+        }
+
+        .disclaimer strong {
+            color: #007bff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            color: #333;
+        }
+
+        footer h3 {
+            margin-top: 0;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer .social-links a {
+            margin: 0 10px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer .social-links a:hover {
+            text-decoration: underline;
+        }

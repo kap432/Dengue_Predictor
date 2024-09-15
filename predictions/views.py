@@ -12,6 +12,9 @@ def dengue_symptoms(request):
 def predict_view(request):
     return render(request, 'predictions/index.html')
 
+def dengue_preventions(request):
+    return render(request, 'predictions/dengue_prevention.html')
+
 # Load the trained model and scaler (ensure paths are correct)
 model = joblib.load('predictions/models/random_forest_model.pkl')
 scaler = joblib.load('predictions/models/scaler.pkl')

@@ -23,4 +23,5 @@ urlpatterns = [
     path('', views.landing_page, name='index'),
     path('predict/', views.predict_dengue, name='predict_dengue'),
     path('dengue-symptoms/', views.dengue_symptoms, name='dengue_symptoms'),
+    path('dengue-preventions/', views.dengue_preventions, name='dengue_preventions'),
 ]
