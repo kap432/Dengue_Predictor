@@ -284,4 +284,25 @@ footer {
     transform: scale(1); /* Return to original size on click */
 }
 
+/* Prediction result styles */
+#results {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#results h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+#probability-result {
+    color: #007bff;
+}
+
+#prediction-result {
+    color: #28a745;
+    font-weight: bold;
+}
+
 

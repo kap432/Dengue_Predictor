@@ -6,6 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dengue Predictor</title>
     <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('form').on('submit', function(event){
+                event.preventDefault(); // Prevent the default form submission
+                var form = $(this);
+                $.ajax({
+                    type: form.attr('method'),
+                    url: form.attr('action'),
+                    data: form.serialize(),
+                    success: function(response){
+                        // Update the prediction result and probability
+                        $('#probability-result').text(response.probability_percentage + '%');
+                        $('#prediction-result').text(response.prediction);
+                    },
+                    error: function(){
+                        $('#prediction-result').text('Error making prediction');
+                        $('#probability-result').text('');
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -114,13 +137,11 @@
                 <button type="submit">Predict</button>
             </div>
         </form>
-    
-        <!-- Display prediction result -->
-        {% if prediction %}
-            <div class="prediction-result">
-                <h3>Prediction Result: {{ prediction }}</h3>
+               <!-- Display prediction result -->
+               <div id="results">
+                <h3 id="probability-result"></h3>
+                <h3 id="prediction-result"></h3>
             </div>
-        {% endif %}
     </section>
 
     <footer>
