@@ -16,12 +16,12 @@
                 <li><a href="#">About</a></li>
                 <li><a href="#">Statistics</a></li>
                 <li><a href="#">News</a></li>
-                <li><a href="#" class="get-prediction">Get Prediction</a></li>
+                <li><a href="{% url 'index' %}#prediction-form"class="get-prediction">Get Prediction</a></li>
             </ul>
         </nav>
     </header>
 
-    <h1>Latest News About Dengue</h1>
+    <h1 id="title">Latest News About Dengue</h1>
     <div class="news-container">
         {% for article in articles %}
             <div class="news-box">

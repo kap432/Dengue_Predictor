@@ -112,3 +112,7 @@ footer .social-links a {
 footer .social-links a:hover {
     text-decoration: underline;
 }
+
+#title{
+    margin-left: 35%;
+}

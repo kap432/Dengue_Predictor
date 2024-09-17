@@ -19,6 +19,13 @@ header h1 {
     margin: 0;
 }
 
+.get-prediction {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
 h2 {
     margin-left : 45%;
     font-size: 40px;

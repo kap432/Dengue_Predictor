@@ -20,6 +20,13 @@
     margin-top: 0;
 }
 
+.get-prediction {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
 .symptoms-box img {
     width: 100%;
     max-width: 400px; /* Adjust the size as needed */
