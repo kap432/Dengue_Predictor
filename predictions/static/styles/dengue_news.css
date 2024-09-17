@@ -50,6 +50,43 @@ nav ul li a {
     border-radius: 5px;
 }
 
+/* News Container */
+.news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.news-box {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.news-box:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.news-box img {
+    width : 100%;
+    height : 200px;
+    object-fit: cover;
+}
+
+.news-box h2 {
+    font-size: 18px;
+    margin: 15px;
+}
+
+.news-box p {
+    padding: 0 15px 15px;
+    color: #666;
+    font-size: 14px;
+}
+
 footer {
     text-align: center;
     padding: 20px;
