@@ -39,7 +39,7 @@
                 <li><a href="#">About</a></li>
                 <li><a href="#">Statistics</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="{% url 'dengue_dashboard' %}">Get Prediction</a></li>
+                <li><a href="{% url 'dengue_dashboard' %}" class="get-prediction" >Get Prediction</a></li>
             </ul>
         </nav>
     </header>
@@ -86,7 +86,7 @@
                 <p>More insights into Dengue predictions, cases by area, and other statistical data are provided for healthcare professionals and decision-makers.</p>
             </div>
             <div class="card-buttons">
-                <a href="#">Read More</a>
+                <a href="{% url 'dengue_dashboard' %}">Read More</a>
             </div>
         </div>
     </section>
