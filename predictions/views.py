@@ -77,3 +77,4 @@ def dengue_news(request):
         'articles': articles
     }
     return render(request, 'predictions/dengue_news.html', context)
+
