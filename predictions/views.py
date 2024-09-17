@@ -2,6 +2,8 @@ from django.shortcuts import render
 import joblib
 import numpy as np
 from django.http import JsonResponse
+import requests
+from django.conf import settings
 
 def landing_page(request):
     return render(request, 'predictions/index.html')
@@ -64,3 +66,14 @@ def dengue_dashboard(request):
     # Render the dengue dashboard page
     return render(request, 'predictions/dengue_dashboard.html')
 
+def dengue_news(request):
+    api_key = settings.NEWS_API_KEY  # Make sure to add this key in your settings
+    url = f'https://newsapi.org/v2/everything?q=dengue&country=in&apiKey={api_key}'
+    response = requests.get(url)
+    print(response.json())
+    news_data = response.json()
+    articles = news_data.get('articles', [])
+    context = {
+        'articles': articles
+    }
+    return render(request, 'predictions/dengue_news.html', context)

@@ -25,4 +25,5 @@ urlpatterns = [
     path('dengue-symptoms/', views.dengue_symptoms, name='dengue_symptoms'),
     path('dengue-dashboard/', views.dengue_dashboard, name='dengue_dashboard'),
     path('dengue-preventions/', views.dengue_preventions, name='dengue_preventions'),
+    path('dengue-news/', views.dengue_news, name='dengue_news'),
 ]

@@ -126,3 +126,5 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+NEWS_API_KEY = '5d4a48f521424673ab1f648288fb78f9'
