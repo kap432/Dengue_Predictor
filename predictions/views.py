@@ -68,9 +68,9 @@ def dengue_dashboard(request):
 
 def dengue_news(request):
     api_key = settings.NEWS_API_KEY  # Make sure to add this key in your settings
-    url = f'https://newsapi.org/v2/everything?q=dengue&country=in&apiKey={api_key}'
+    url = f'https://newsapi.org/v2/everything?q=dengue&apiKey={api_key}'
     response = requests.get(url)
-    print(response.json())
+    #print(response.json())
     news_data = response.json()
     articles = news_data.get('articles', [])
     context = {
