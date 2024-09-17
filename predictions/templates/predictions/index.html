@@ -38,8 +38,8 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Statistics</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="{% url 'dengue_dashboard' %}" class="get-prediction" >Get Prediction</a></li>
+                <li><a href="{% url 'dengue_news' %}">News</a></li>
+                <li><a href="#prediction-form"class="get-prediction">Get Prediction</a></li>
             </ul>
         </nav>
     </header>
@@ -102,7 +102,7 @@
             </div>
         </div>
     </section>    
-    <section class="prediction-form">
+    <section class="prediction-form" id="prediction-form">
         <h2>Prediction</h2>
         <form method="POST" action="{% url 'predict_dengue' %}">
             {% csrf_token %}
