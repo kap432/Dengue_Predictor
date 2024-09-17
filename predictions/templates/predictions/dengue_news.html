@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dengue News</title>
+    <link rel="stylesheet" href="{% static 'styles/dengue_news.css' %}">
+</head>
+<body>
+    <header>
+        <h1>DENGUE Predictor</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Statistics</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#" class="get-prediction">Get Prediction</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Latest News About Dengue</h1>
+    <ul>
+        {% for article in articles %}
+            <li>
+                <a href="{{ article.url }}" target="_blank">{{ article.title }}</a>
+                <p>{{ article.description }}</p>
+            </li>
+        {% empty %}
+            <li>No news articles found.</li>
+        {% endfor %}
+    </ul>
+
+
+    <footer>
+        <h3>Contact</h3>
+        <p>Email: <a href="mailto:notsorealtestingprediction@gmail.com">notsorealtestingprediction@gmail.com</a></p>
+        <p>Phone: +91 00000 00000</p>
+        <p>Location: West, Chembur</p>
+        <div class="social-links">
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+        </div>
+    </footer>
+</body>
+</html>
