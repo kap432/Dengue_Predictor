@@ -1,9 +1,10 @@
-/* General Body Styles */
+/* Basic reset */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
+
 
 header {
     background-color: white;
@@ -46,6 +47,23 @@ nav ul li a {
     border-radius: 5px;
 }
 
+.hero {
+    text-align: center;
+    padding: 50px;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.hero h2 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-top : 10px;
+}
+
 footer {
     text-align: center;
     padding: 20px;
@@ -70,4 +88,93 @@ footer .social-links a {
 
 footer .social-links a:hover {
     text-decoration: underline;
+}
+
+/* Main Section Styles */
+main {
+    padding: 2rem;
+}
+
+/* Map and Location Box */
+.map-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.location-box {
+    flex: 1;
+    max-width: 300px; /* Increased size of location box */
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 2rem;
+}
+
+.location-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 25%;
+    color: #007bff;
+}
+
+.location-box label {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-size: 1.1rem;
+}
+
+.location-box select {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    color: #34495e;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.location-box select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Adjusted map size */
+#map {
+    border: 3px solid #3498db; /* Blue border */
+    border-radius: 8px; /* Smooth corner for a modern look */
+    flex: 2;
+    height: 500px; /* Decreased height of the map */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Prediction Box */
+.prediction-box {
+    margin-top: 2rem;
+    background-color: white;
+    padding: 2.0rem;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 25%; /* Adjusted width for shorter length */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.prediction-box h3 {
+    color: #007bff;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.prediction-box p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
 }

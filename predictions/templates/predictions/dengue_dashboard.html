@@ -7,12 +7,8 @@
     <title>Dengue Symptoms Awareness</title>
     <link rel="stylesheet" href="{% static 'styles/dengue_dashboard.css' %}">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <style>
-        #map {
-            height : 400px;
-            width : 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700display=swap">
+
 </head>
 <body>
     <header>
@@ -28,54 +24,26 @@
         </nav>
     </header>
 
-    <section class="map-section"></section>
-        <h2>Location Map</h2>
-        <label for="location">Select Location:</label>
-        <select id="location" name="location">
-            <option value="">Select a location</option>
-            <option value="mulund">Mulund</option>
-        </select>
 
-        <!-- Map Container -->
-        <div id="map"></div>
-    </section>
+    <main>
+        <section class="map-section">
+            <div class="location-box">
+                <h2>Location Map</h2>
+                <label for="location">Select Location:</label>
+                <select id="location" name="location">
+                    <option value="">Select a location</option>
+                    <option value="mulund">Mulund</option>
+                </select>
+            </div>
 
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script>
-        // Initialize map
-        var map = L.map('map').setView([20.5937, 78.9629], 5); // Default location to India
+            <div id="map"></div>
+        </section>
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        // Location coordinates
-        var locations = {
-            'mulund': [19.1896, 72.9681] // Coordinates for Mulund, Mumbai
-        };
-
-        // Function to update map location
-        function updateMap(location) {
-            map.setView(locations[location] || [19.1721, 72.9563], 10); // Default to India if no location is selected
-            if (location) {
-                L.circle(locations[location], {
-                    color: 'red',
-                    fillColor: '#f03',
-                    fillOpacity: 0.5,
-                    radius: 500
-                }).addTo(map);
-            }
-        }
-
-        // Handle dropdown change
-        document.getElementById('location').addEventListener('change', function() {
-            var selectedLocation = this.value;
-            updateMap(selectedLocation);
-        });
-
-        // Initialize with no location
-        updateMap('');
-    </script>
+        <section class="prediction-box">
+            <h3>Predicted Cases:</h3>
+            <p>Select a location to see the prediction...</p>
+        </section>
+    </main>
 
     <footer>
         <h3>Contact</h3>
@@ -88,5 +56,7 @@
             <a href="#">Facebook</a>
         </div>
     </footer>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="{% static 'scripts/dengue_dashboard.js' %}"></script>
 </body>
 </html>
