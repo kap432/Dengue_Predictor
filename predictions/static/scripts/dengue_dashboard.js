@@ -1,4 +1,5 @@
 // Initialize map
+
 var map = L.map('map').setView([19.0760, 72.8777], 10); // Default location to Mumbai
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

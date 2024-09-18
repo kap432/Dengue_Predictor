@@ -27,4 +27,5 @@ urlpatterns = [
     path('dengue-preventions/', views.dengue_preventions, name='dengue_preventions'),
     path('dengue-news/', views.dengue_news, name='dengue_news'),
     path('dengue-chatbot/', views.dengue_chatbot, name='dengue_chatbot'),
+    path('your-django-endpoint/', views.weather_data_view, name='weather_data_view'),
 ]

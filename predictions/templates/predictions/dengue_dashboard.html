@@ -12,7 +12,7 @@
 
 </head>
 <body>
-    <header>
+ <!--   <header>
         <div class="header-content">
             <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
             <h1>DENGUE Predictor</h1>
@@ -29,8 +29,6 @@
     </header>
 
 
-    <main>
-        <section class="map-section">
             <div class="location-box">
                 <h2>Location Map</h2>
                 <label for="location">Select Location:</label>
@@ -38,18 +36,9 @@
                     <option value="">Select a location</option>
                     <option value="mulund">Mulund</option>
                 </select>
-            </div>
+            </div> -->
 
-            <div id="map"></div>
-        </section>
-
-        <section class="prediction-box">
-            <h3>Predicted Cases:</h3>
-            <p>Select a location to see the prediction...</p>
-        </section>
-    </main>
-
-    <footer>
+   <!-- <footer>
         <h3>Contact</h3>
         <p>Email: <a href="mailto:notsorealtestingprediction@gmail.com">notsorealtestingprediction@gmail.com</a></p>
         <p>Phone: +91 00000 00000</p>
@@ -59,8 +48,29 @@
             <a href="#">Instagram</a>
             <a href="#">Facebook</a>
         </div>
-    </footer>
+    </footer> -->
+
+    <header>
+        <h1>Weekly Weather Data</h1>
+    </header>
+
+    <section id="weather-info" style="display: none;"> <!-- Hide the section initially -->
+        <h2>Weather for Latitude: 18.465540, Longitude: -66.105736</h2>
+        <ul>
+            <li>Precipitation (mm): <span id="precipitation_amt_mm">Loading...</span></li>
+            <li>Average Temperature (K): <span id="avg_temp_k">Loading...</span></li>
+            <li>Dew Point Temperature (K): <span id="dew_point_temp_k">Loading...</span></li>
+            <li>Max Air Temperature (K): <span id="max_air_temp_k">Loading...</span></li>
+            <li>Min Air Temperature (K): <span id="min_air_temp_k">Loading...</span></li>
+            <li>Relative Humidity (%): <span id="relative_humidity_percent">Loading...</span></li>
+        </ul>
+        <p id="prediction_result">Predicted total cases: N/A</p>
+    </section>
+
+    <button id="fetch-weather-data">Fetch Weather Data</button> <!-- Submit button -->
+
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="{% static 'scripts/dengue_dashboard.js' %}"></script>
+    <script src="{% static 'scripts/weather_data.js' %}"></script>
 </body>
 </html>

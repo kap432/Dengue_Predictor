@@ -3,7 +3,14 @@ import joblib
 import numpy as np
 from django.http import JsonResponse
 import requests
+from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
+import json
+import pandas as pd
+
+# Load the model and scaler
+model1 = joblib.load('predictions/models/best_rf_model.joblib')
+scaler1 = joblib.load('predictions/models/scaler.joblib')
 
 def landing_page(request):
     return render(request, 'predictions/index.html')
@@ -105,3 +112,39 @@ def dengue_news(request):
         'articles': articles
     }
     return render(request, 'predictions/dengue_news.html', context)
+
+@csrf_exempt
+def weather_data_view(request):
+    if request.method == 'POST':
+        try:
+            # Load the JSON data from the request
+            data = json.loads(request.body)
+            
+            # Prepare the data for prediction
+            sample_data = pd.DataFrame({
+                'precipitation_amt_mm': [data.get('precipitationAmtMm', 0)],
+                'reanalysis_avg_temp_k': [data.get('avgTempK', 0)],
+                'reanalysis_dew_point_temp_k': [data.get('dewPointTempK', 0)],
+                'reanalysis_max_air_temp_k': [data.get('maxTempK', 0)],
+                'reanalysis_min_air_temp_k': [data.get('minTempK', 0)],
+                'reanalysis_relative_humidity_percent': [data.get('relativeHumidityPercent', 0)]
+            })
+
+            # Scale the sample data
+            sample_data_scaled = scaler1.transform(sample_data)
+            
+            # Make a prediction
+            prediction = model1.predict(sample_data_scaled)
+
+            # Print the prediction to the terminal
+            print("Predicted total_cases:", prediction[0])
+            
+            # Return the prediction as JSON
+            return JsonResponse({'status': 'success', 'predicted_total_cases': prediction[0]}, status=200)
+        except json.JSONDecodeError:
+            return JsonResponse({'status': 'error', 'message': 'Invalid JSON'}, status=400)
+        except Exception as e:
+            print(f'Error: {e}')
+            return JsonResponse({'status': 'error', 'message': 'An error occurred'}, status=500)
+    else:
+        return JsonResponse({'status': 'error', 'message': 'Invalid request method'}, status=405)
