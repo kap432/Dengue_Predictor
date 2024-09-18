@@ -4,7 +4,8 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dengue Predictor</title>
+    <title>DENGUE Predictor</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
     <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
@@ -32,7 +33,10 @@
 </head>
 <body>
     <header>
-        <h1>DENGUE Predictor</h1>
+        <div class="header-content">
+            <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
+            <h1>DENGUE Predictor</h1>
+        </div>
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>

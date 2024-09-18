@@ -2,16 +2,9 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
-
-.article {
-    margin-bottom : 20px;
-}
-.article h3 {
-    margin: 0;
-}
-.article p {
-    margin: 5px 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures that the body takes up at least the full height of the viewport */
 }
 
 header {
@@ -50,7 +43,13 @@ nav ul li a {
     border-radius: 5px;
 }
 
-/* News Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    flex: 1; /* Ensures the container takes up available space and pushes footer to bottom */
+}
+
 .news-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -60,10 +59,12 @@ nav ul li a {
 
 .news-box {
     background-color: white;
-    border: 1px solid #ddd;
+    border: 1px solid #007bff; /* Red border */
     border-radius: 8px;
     overflow: hidden;
     transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .news-box:hover {
@@ -71,20 +72,46 @@ nav ul li a {
 }
 
 .news-box img {
-    width : 100%;
-    height : 200px;
+    width: 100%;
+    height: 180px; /* Adjust height as needed */
     object-fit: cover;
 }
 
-.news-box h2 {
-    font-size: 18px;
-    margin: 15px;
+.news-content {
+    padding: 15px;
+    flex: 1;
 }
 
-.news-box p {
-    padding: 0 15px 15px;
-    color: #666;
+.news-content h2 {
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+.date-source {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.news-content p {
     font-size: 14px;
+    color: #666;
+    margin: 0 0 15px;
+}
+
+.read-more-button {
+    display: block;
+    text-align: center;
+    background-color: #007BFF; /* Blue color */
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.read-more-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
 footer {
@@ -95,7 +122,7 @@ footer {
 }
 
 footer h3 {
-    margin-top : 0;
+    margin-top: 0;
 }
 
 footer p {
@@ -113,6 +140,18 @@ footer .social-links a:hover {
     text-decoration: underline;
 }
 
-#title{
-    margin-left: 35%;
+#title {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 70px; /* Adjust as needed */
+    margin-right: 10px; /* Space between logo and title */
+    margin-top: -3%;
 }
