@@ -20,6 +20,13 @@
     margin-top: 0;
 }
 
+.get-prediction {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
 .symptoms-box img {
     width: 100%;
     max-width: 400px; /* Adjust the size as needed */
@@ -176,4 +183,15 @@ footer .social-links a {
 
 footer .social-links a:hover {
     text-decoration: underline;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 70px; /* Adjust as needed */
+    margin-right: 10px; /* Space between logo and title */
+    margin-top: -3%;
 }

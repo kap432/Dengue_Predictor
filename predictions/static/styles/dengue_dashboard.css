@@ -19,6 +19,13 @@ header h1 {
     margin: 0;
 }
 
+.get-prediction {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
 h2 {
     margin-left : 45%;
     font-size: 40px;
@@ -153,4 +160,15 @@ main {
 .prediction-box p {
     font-size: 1.2rem;
     color: #7f8c8d;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 70px; /* Adjust as needed */
+    margin-right: 10px; /* Space between logo and title */
+    margin-top: -3%;
 }
