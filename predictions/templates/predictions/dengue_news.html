@@ -4,12 +4,16 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dengue News</title>
+    <title>DENGUE Predictor</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
     <link rel="stylesheet" href="{% static 'styles/dengue_news.css' %}">
 </head>
 <body>
     <header>
-        <h1>DENGUE Predictor</h1>
+        <div class="header-content">
+            <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
+            <h1>DENGUE Predictor</h1>
+        </div>
         <nav>
             <ul>
                 <li><a href="{% url 'index' %}">Home</a></li>
@@ -23,18 +27,22 @@
 
     <h1 id="title">Latest News About Dengue</h1>
     <div class="news-container">
-        {% for article in articles %}
-            <div class="news-box">
-                <a href="{{ article.url }}" target="_blank">
-                    <img src="{{ article.urlToImage }}" alt="News Image">
-                    <h2>{{ article.title }}</h2>
-                </a>
-                <p>{{ article.description }}</p>
-            </div>
-        {% empty %}
+        {% if articles %}
+            {% for article in articles %}
+                <div class="news-box">
+                        <img src="{{ article.urlToImage }}" alt="News Image">
+                        <div class="news-content">
+                            <h2>{{ article.title }}</h2>
+                            <p class="date-source">{{ article.publishedAt }} - {{ article.source }}</p>
+                            <p>{{ article.description }}</p>
+                            <a href="{{ article.url }}" target="_blank" class="read-more-button">Read More</a>
+                        </div>
+                </div>
+            {% endfor %}
+        {% else %}
             <div class="news-box">No news articles found.</div>
-        {% endfor %}
-    </div>
+        {% endif %}
+            </div>
 
     <footer>
         <h3>Contact</h3>

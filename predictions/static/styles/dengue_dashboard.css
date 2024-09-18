@@ -185,3 +185,14 @@ main {
     font-size: 1.2rem;
     color: #7f8c8d;
 }
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 70px; /* Adjust as needed */
+    margin-right: 10px; /* Space between logo and title */
+    margin-top: -3%;
+}

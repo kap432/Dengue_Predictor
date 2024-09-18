@@ -305,4 +305,14 @@ footer {
     font-weight: bold;
 }
 
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 70px; /* Adjust as needed */
+    margin-right: 10px; /* Space between logo and title */
+    margin-top: -3%;
+}
 

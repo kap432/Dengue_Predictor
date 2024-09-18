@@ -184,3 +184,14 @@ footer .social-links a {
 footer .social-links a:hover {
     text-decoration: underline;
 }
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 70px; /* Adjust as needed */
+    margin-right: 10px; /* Space between logo and title */
+    margin-top: -3%;
+}

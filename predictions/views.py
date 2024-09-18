@@ -68,13 +68,37 @@ def dengue_dashboard(request):
 
 def dengue_news(request):
     api_key = settings.NEWS_API_KEY  # Make sure to add this key in your settings
-    url = f'https://newsapi.org/v2/everything?q=dengue&apiKey={api_key}'
-    response = requests.get(url)
-    #print(response.json())
-    news_data = response.json()
-    articles = news_data.get('articles', [])
+    url = f'https://newsapi.org/v2/everything?q=dengue&sources=the-times-of-india&apiKey={api_key}'
+    try:
+        response = requests.get(url)
+        response.raise_for_status()  # Raise an HTTPError for bad responses
+        news_data = response.json()
+        
+        # Filter articles from Times of India
+        articles = [
+            {
+                'title': article.get('title', 'No title available'),
+                'urlToImage': article.get('urlToImage', 'default_image_url'),  # Provide a default image URL if needed
+                'publishedAt': article.get('publishedAt', 'No date available'),
+                'source': article.get('source', {}).get('name', 'No source available'),
+                'description': article.get('description', 'No description available'),
+                'url': article.get('url', '#')
+            }
+            for article in news_data.get('articles', [])
+            if article.get('source', {}).get('name') == 'The Times of India' and 'dengue' in article.get('title', '').lower()
+        ]
+    
+    except requests.RequestException as e:
+        # Handle errors from the request
+        print(f"Error fetching news: {e}")
+        articles = []  # Set to empty list or handle as appropriate
+
+    except ValueError as e:
+        # Handle errors in decoding JSON
+        print(f"Error decoding JSON: {e}")
+        articles = []
+
     context = {
         'articles': articles
     }
     return render(request, 'predictions/dengue_news.html', context)
-
