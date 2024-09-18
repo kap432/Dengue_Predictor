@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dengue Symptoms Awareness</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'styles/dengue_chatbot.css' %}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
+            <h1>DENGUE Predictor</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Statistics</a></li>
+                <li><a href="{% url 'dengue_news' %}">News</a></li>
+                <li><a href="{% url 'index' %}#prediction-form"class="get-prediction">Get Prediction</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <body>
+
+        <div class="container">
+            <!-- Image -->
+            <img src="{% static 'images/ChatBot.jpg' %}" alt="Under Progress">
+        
+            <h1>Our Bot is Coming Soon!</h1>
+            <p>We are working hard to bring you an amazing experience.</p>
+        </div>
+    
+        <!-- <h1>Countdown to October 19, 2024</h1> -->
+    
+        <!-- <div class="search-box">
+            <input type="text" placeholder="Search here...">
+        </div> -->
+    
+        <div class="timer">
+            <div class="card">
+                <span id="months">00</span>
+                <h3>Months</h3>
+            </div>
+            <div class="card">
+                <span id="weeks">00</span>
+                <h3>Weeks</h3>
+            </div>
+            <div class="card">
+                <span id="days">00</span>
+                <h3>Days</h3>
+            </div>
+            <div class="card">
+                <span id="hours">00</span>
+                <h3>Hours</h3>
+            </div>
+            <div class="card">
+                <span id="minutes">00</span>
+                <h3>Minutes</h3>
+            </div>
+            <div class="card">
+                <span id="seconds">00</span>
+                <h3>Seconds</h3>
+            </div>
+        </div>
+    
+        <script>
+            function calculateCountdown() {
+                const targetDate = new Date("October 19, 2024 00:00:00").getTime();
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+    
+                // Time calculations for months, weeks, days, hours, minutes, and seconds
+                const months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
+                const weeks = Math.floor((distance % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24 * 7));
+                const days = Math.floor((distance % (1000 * 60 * 60 * 24 * 7)) / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+                // Display the result in the appropriate card
+                document.getElementById("months").textContent = months;
+                document.getElementById("weeks").textContent = weeks;
+                document.getElementById("days").textContent = days;
+                document.getElementById("hours").textContent = hours < 10 ? "0" + hours : hours;
+                document.getElementById("minutes").textContent = minutes < 10 ? "0" + minutes : minutes;
+                document.getElementById("seconds").textContent = seconds < 10 ? "0" + seconds : seconds;
+    
+                // If the countdown is over, display "EXPIRED"
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    document.querySelector('.timer').innerHTML = "<h2>EXPIRED</h2>";
+                }
+            }
+    
+            // Update the countdown every second
+            const countdownInterval = setInterval(calculateCountdown, 1000);
+        </script>
+    
+    </body>
+
+    <footer>
+        <h3>Contact</h3>
+        <p>Email: <a href="mailto:notsorealtestingprediction@gmail.com">notsorealtestingprediction@gmail.com</a></p>
+        <p>Phone: +91 00000 00000</p>
+        <p>Location: West, Chembur</p>
+        <div class="social-links">
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+        </div>
+    </footer>
+</body>
+</html>
