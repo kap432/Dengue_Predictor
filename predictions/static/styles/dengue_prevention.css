@@ -71,14 +71,6 @@
             color: #007bff; /* Blue color for all text */
         }
 
-        .tips {
-            /* display: flex; */
-            /* justify-content: space-between; */
-            /* gap: 20px; Adds space between each tip */
-            /* margin-top: 20px; */
-            /* flex-wrap: wrap; */
-        }
-
         .tip {
             text-align: center;
             width: 180%;
