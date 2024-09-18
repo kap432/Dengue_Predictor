@@ -47,6 +47,30 @@ nav ul li a {
     text-decoration: none;
 }
 
+.get-prediction {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.hero h2 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-top : 10px;
+}
+
 footer {
     text-align: center;
     padding: 20px;

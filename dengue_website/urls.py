@@ -26,4 +26,5 @@ urlpatterns = [
     path('dengue-dashboard/', views.dengue_dashboard, name='dengue_dashboard'),
     path('dengue-preventions/', views.dengue_preventions, name='dengue_preventions'),
     path('dengue-news/', views.dengue_news, name='dengue_news'),
+    path('dengue-chatbot/', views.dengue_chatbot, name='dengue_chatbot'),
 ]
