@@ -44,8 +44,8 @@ nav ul li a {
 .hero {
     display: flex;
     align-items: center;
-    background-color: black;
-    color: white;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     padding: 20px;
 }
 
@@ -305,4 +305,14 @@ footer {
     font-weight: bold;
 }
 
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 70px; /* Adjust as needed */
+    margin-right: 10px; /* Space between logo and title */
+    margin-top: -3%;
+}
 

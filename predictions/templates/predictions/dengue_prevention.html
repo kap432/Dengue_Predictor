@@ -4,19 +4,23 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dengue Symptoms Awareness</title>
+    <title>DENGUE Predictor</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
     <link rel="stylesheet" href="{% static 'styles/dengue_prevention.css' %}">
 </head>
 <body>
     <header>
-        <h1>DENGUE Predictor</h1>
+        <div class="header-content">
+            <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
+            <h1>DENGUE Predictor</h1>
+        </div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Statistics</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#" class="get-prediction">Get Prediction</a></li>
+                <li><a href="{% url 'dengue_news' %}">News</a></li>
+                <li><a href="{% url 'index' %}#prediction-form"class="get-prediction">Get Prediction</a></li>
             </ul>
         </nav>
     </header>

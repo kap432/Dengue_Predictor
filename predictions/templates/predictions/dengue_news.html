@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DENGUE Predictor</title>
     <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
-    <link rel="stylesheet" href="{% static 'styles/dengue_dashboard.css' %}">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700display=swap">
-
+    <link rel="stylesheet" href="{% static 'styles/dengue_news.css' %}">
 </head>
 <body>
     <header>
@@ -22,32 +19,30 @@
                 <li><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Statistics</a></li>
-                <li><a href="{% url 'dengue_news' %}">News</a></li>
+                <li><a href="#">News</a></li>
                 <li><a href="{% url 'index' %}#prediction-form"class="get-prediction">Get Prediction</a></li>
             </ul>
         </nav>
     </header>
 
-
-    <main>
-        <section class="map-section">
-            <div class="location-box">
-                <h2>Location Map</h2>
-                <label for="location">Select Location:</label>
-                <select id="location" name="location">
-                    <option value="">Select a location</option>
-                    <option value="mulund">Mulund</option>
-                </select>
+    <h1 id="title">Latest News About Dengue</h1>
+    <div class="news-container">
+        {% if articles %}
+            {% for article in articles %}
+                <div class="news-box">
+                        <img src="{{ article.urlToImage }}" alt="News Image">
+                        <div class="news-content">
+                            <h2>{{ article.title }}</h2>
+                            <p class="date-source">{{ article.publishedAt }} - {{ article.source }}</p>
+                            <p>{{ article.description }}</p>
+                            <a href="{{ article.url }}" target="_blank" class="read-more-button">Read More</a>
+                        </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="news-box">No news articles found.</div>
+        {% endif %}
             </div>
-
-            <div id="map"></div>
-        </section>
-
-        <section class="prediction-box">
-            <h3>Predicted Cases:</h3>
-            <p>Select a location to see the prediction...</p>
-        </section>
-    </main>
 
     <footer>
         <h3>Contact</h3>
@@ -60,7 +55,5 @@
             <a href="#">Facebook</a>
         </div>
     </footer>
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="{% static 'scripts/dengue_dashboard.js' %}"></script>
 </body>
 </html>
