@@ -9,6 +9,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // Location coordinates
 var locations = {
     'mulund': [19.17168, 72.956], // Coordinates for Mulund
+    'san_juan': [18.465540,-66.105736],
 };
 
 // Function to update map location

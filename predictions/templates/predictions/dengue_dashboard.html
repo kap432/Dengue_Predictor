@@ -26,50 +26,31 @@
                 <li><a href="{% url 'index' %}#prediction-form"class="get-prediction">Get Prediction</a></li>
             </ul>
         </nav>
-    </header>
+    </header> 
 
-
-            <div class="location-box">
-                <h2>Location Map</h2>
-                <label for="location">Select Location:</label>
-                <select id="location" name="location">
-                    <option value="">Select a location</option>
-                    <option value="mulund">Mulund</option>
-                </select>
-                <button id="fetch-weather-data">Fetch Weather Data</button> <!-- Submit button -->
-            </div> 
-
-            <section class="prediction-box">
-                <p id="prediction_result">Predicted total cases: N/A</p>
-            </section>
-    <footer>
-        <h3>Contact</h3>
-        <p>Email: <a href="mailto:notsorealtestingprediction@gmail.com">notsorealtestingprediction@gmail.com</a></p>
-        <p>Phone: +91 00000 00000</p>
-        <p>Location: West, Chembur</p>
-        <div class="social-links">
-            <a href="#">Twitter</a>
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
+<main>
+    <!-- Form to select location and trigger dengue prediction -->
+    <form id="prediction-form">
+        <section class="map-section">
+        <div class="location-box">
+            <h2>Location Map</h2>
+            <label for="location">Select Location:</label>
+            <select id="location" name="location" required>
+                <option value="">Select a location</option>
+                <option value="mulund">Mulund</option>
+                <option value="san_juan">San Juan</option>
+            </select>
         </div>
-    </footer> 
-
-    <!-- <header>
-        <h1>Weekly Weather Data</h1>
-    </header> -->
-
-   <!-- <section id="weather-info" style="display: none;">  Hide the section initially -->
-       <!-- <h2>Weather for Latitude: 18.465540, Longitude: -66.105736</h2>
-        <ul>
-            <li>Precipitation (mm): <span id="precipitation_amt_mm">Loading...</span></li>
-            <li>Average Temperature (K): <span id="avg_temp_k">Loading...</span></li>
-            <li>Dew Point Temperature (K): <span id="dew_point_temp_k">Loading...</span></li>
-            <li>Max Air Temperature (K): <span id="max_air_temp_k">Loading...</span></li>
-            <li>Min Air Temperature (K): <span id="min_air_temp_k">Loading...</span></li>
-            <li>Relative Humidity (%): <span id="relative_humidity_percent">Loading...</span></li>
-        </ul>
+        <div id="map"></div>
+    </section>
+        <!-- Button to fetch weather data and predict cases -->
+        <button type="submit" id="fetch-weather-data">Predict Dengue Cases</button>
+    </form>
+    <section id="prediction-box">
+        <h3>Predicted Cases</h3>
         <p id="prediction_result">Predicted total cases: N/A</p>
-    </section> -->
+    </section>
+</main>
 
     <footer>
         <h3>Contact</h3>

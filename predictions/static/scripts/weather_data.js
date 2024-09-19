@@ -36,13 +36,13 @@ function calculateWeeklyAverages(data) {
     weatherList.forEach(item => {
         const main = item.main;
         const rain = item.rain || {};
-        const humidity = main.humidity || 0;  // Access humidity from main
+        const humidity = main.humidity || 0;
 
-        precipitationAmtMm += rain["3h"] || 0;  // Check if "3h" is available
-        avgTempK += main.temp + 273.15;  // Convert Celsius to Kelvin
-        dewPointTempK += calculateDewPoint(main.temp, humidity) + 273.15;  // Convert dew point to Kelvin
-        maxTempK = Math.max(maxTempK, (main.temp_max || Number.MIN_VALUE) + 273.15);  // Convert max temp to Kelvin
-        minTempK = Math.min(minTempK, (main.temp_min || Number.MAX_VALUE) + 273.15);  // Convert min temp to Kelvin
+        precipitationAmtMm += rain["3h"] || 0;
+        avgTempK += main.temp + 273.15;
+        dewPointTempK += calculateDewPoint(main.temp, humidity) + 273.15;
+        maxTempK = Math.max(maxTempK, (main.temp_max || Number.MIN_VALUE) + 273.15);
+        minTempK = Math.min(minTempK, (main.temp_min || Number.MAX_VALUE) + 273.15);
         relativeHumidityPercent += humidity;
 
         count++;
@@ -63,22 +63,11 @@ function calculateWeeklyAverages(data) {
     };
 }
 
-// Update the DOM with the calculated weather data
-function updateDOM(data) {
-    document.getElementById('precipitation_amt_mm').textContent = data.precipitationAmtMm.toFixed(2);
-    document.getElementById('avg_temp_k').textContent = data.avgTempK.toFixed(2);
-    document.getElementById('dew_point_temp_k').textContent = data.dewPointTempK.toFixed(2);
-    document.getElementById('max_air_temp_k').textContent = data.maxTempK.toFixed(2);
-    document.getElementById('min_air_temp_k').textContent = data.minTempK.toFixed(2);
-    document.getElementById('relative_humidity_percent').textContent = data.relativeHumidityPercent.toFixed(2);
-}
-
-// Handle button click to fetch and display weather data
+// Handle button click to fetch and send weather data to backend
 document.getElementById('fetch-weather-data').addEventListener('click', async () => {
     const data = await getWeatherData();
     if (data) {
         const weeklyData = calculateWeeklyAverages(data);
-        updateDOM(weeklyData);
 
         // Send the data to Django backend
         try {
@@ -86,7 +75,7 @@ document.getElementById('fetch-weather-data').addEventListener('click', async ()
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-CSRFToken': getCookie('csrftoken')  // Include CSRF token for security
+                    'X-CSRFToken': getCookie('csrftoken')  // CSRF token
                 },
                 body: JSON.stringify(weeklyData)
             });
@@ -104,9 +93,6 @@ document.getElementById('fetch-weather-data').addEventListener('click', async ()
         } catch (error) {
             console.error('Error sending data to backend:', error);
         }
-
-        // Show the weather info section
-        document.getElementById('weather-info').style.display = 'block';
     }
 });
 
