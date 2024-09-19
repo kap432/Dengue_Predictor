@@ -12,7 +12,7 @@
 
 </head>
 <body>
- <!--   <header>
+    <header>
         <div class="header-content">
             <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
             <h1>DENGUE Predictor</h1>
@@ -36,9 +36,10 @@
                     <option value="">Select a location</option>
                     <option value="mulund">Mulund</option>
                 </select>
-            </div> -->
+                <button id="fetch-weather-data">Fetch Weather Data</button> <!-- Submit button -->
+            </div> 
 
-   <!-- <footer>
+    <footer>
         <h3>Contact</h3>
         <p>Email: <a href="mailto:notsorealtestingprediction@gmail.com">notsorealtestingprediction@gmail.com</a></p>
         <p>Phone: +91 00000 00000</p>
@@ -48,14 +49,14 @@
             <a href="#">Instagram</a>
             <a href="#">Facebook</a>
         </div>
-    </footer> -->
+    </footer> 
 
-    <header>
+    <!-- <header>
         <h1>Weekly Weather Data</h1>
-    </header>
+    </header> -->
 
-    <section id="weather-info" style="display: none;"> <!-- Hide the section initially -->
-        <h2>Weather for Latitude: 18.465540, Longitude: -66.105736</h2>
+   <!-- <section id="weather-info" style="display: none;">  Hide the section initially -->
+       <!-- <h2>Weather for Latitude: 18.465540, Longitude: -66.105736</h2>
         <ul>
             <li>Precipitation (mm): <span id="precipitation_amt_mm">Loading...</span></li>
             <li>Average Temperature (K): <span id="avg_temp_k">Loading...</span></li>
@@ -65,9 +66,21 @@
             <li>Relative Humidity (%): <span id="relative_humidity_percent">Loading...</span></li>
         </ul>
         <p id="prediction_result">Predicted total cases: N/A</p>
-    </section>
+    </section> -->
 
-    <button id="fetch-weather-data">Fetch Weather Data</button> <!-- Submit button -->
+    <p id="prediction_result">Predicted total cases: N/A</p>
+
+    <footer>
+        <h3>Contact</h3>
+        <p>Email: <a href="mailto:notsorealtestingprediction@gmail.com">notsorealtestingprediction@gmail.com</a></p>
+        <p>Phone: +91 00000 00000</p>
+        <p>Location: West, Chembur</p>
+        <div class="social-links">
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+        </div>
+    </footer> 
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="{% static 'scripts/dengue_dashboard.js' %}"></script>
