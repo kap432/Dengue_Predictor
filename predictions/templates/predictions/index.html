@@ -52,7 +52,9 @@
         <div class="hero-text">
             <h2>Dengue Predictor</h2>
             <p>Use our Chat Bot</p>
-            <button><a href="{%url 'dengue_chatbot' %}">Try Now!</a></button>
+            <button class="styled-button">
+                <a href="{% url 'dengue_chatbot' %}">Try Now!</a>
+            </button>
         </div>
         <img src="{% static 'images/mosquito.jpg' %}" alt="Mosquito" class="hero-image">
     </section>

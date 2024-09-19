@@ -140,7 +140,7 @@ def weather_data_view(request):
             print("Predicted total_cases:", prediction[0])
             
             # Return the prediction as JSON
-            return JsonResponse({'status': 'success', 'predicted_total_cases': prediction[0]}, status=200)
+            return JsonResponse({'status': 'success', 'predicted_total_cases': int(prediction[0])}, status=200)
         except json.JSONDecodeError:
             return JsonResponse({'status': 'error', 'message': 'Invalid JSON'}, status=400)
         except Exception as e:

@@ -196,3 +196,25 @@ main {
     margin-right: 10px; /* Space between logo and title */
     margin-top: -3%;
 }
+
+.btn-predict {
+    background-color: #007bff; /* Primary blue color */
+    color: white; /* Text color */
+    padding: 12px 20px; /* Increased padding for better touch target */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+    margin-top: 15px; /* Space above the button */
+    width: 100%; /* Full width */
+}
+
+.btn-predict:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.btn-predict:active {
+    transform: translateY(1px); /* Press effect */
+}

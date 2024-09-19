@@ -316,3 +316,26 @@ footer {
     margin-top: -3%;
 }
 
+.styled-button {
+    background-color: #007bff; /* Button background color */
+    border: none;              /* Remove default border */
+    border-radius: 5px;       /* Rounded corners */
+    padding: 10px 20px;       /* Padding for button size */
+    cursor: pointer;           /* Pointer cursor on hover */
+    display: inline-block;     /* Display as inline block */
+}
+
+.styled-button a {
+    color: white;              /* Text color */
+    text-decoration: none;     /* Remove underline from link */
+    font-weight: bold;         /* Bold text */
+}
+
+.styled-button:hover {
+    background-color: #0056b3; /* Darker background on hover */
+}
+
+.styled-button a:hover {
+    color: #ffffff;            /* Change text color on hover */
+}
+
