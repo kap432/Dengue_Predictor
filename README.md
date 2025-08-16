@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/21813633/README.md)
 # 🦟 Dengue Predictor
 
 A **Django-based web application** that predicts the likelihood of a patient having **Dengue Fever** using a trained machine learning model.  
