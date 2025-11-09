@@ -25,8 +25,7 @@ SECRET_KEY = "django-insecure-yrp$juog6&w2=t%bk-3sdlc#%enbt%w7(9!2ardwe@230wgdpo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['dengue-predictor-zfgb.onrender.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
