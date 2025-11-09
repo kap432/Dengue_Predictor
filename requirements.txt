@@ -6,3 +6,4 @@ whitenoise==6.6.0
 joblib
 numpy
 pandas
+requests
